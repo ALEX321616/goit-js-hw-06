@@ -4,17 +4,14 @@ const incrementBtn = document.querySelector(
 );
 const counterValue = document.querySelector("#value");
 
-const incrementDecrement = Number(1);
+let incrementDecrement = 0;
 
 incrementBtn.addEventListener(
   "click",
-  () =>
-    (counterValue.textContent =
-      Number(counterValue.textContent) + incrementDecrement)
+  () => (counterValue.textContent = incrementDecrement += 1)
 );
+
 decrementBtn.addEventListener(
   "click",
-  () =>
-    (counterValue.textContent =
-      Number(counterValue.textContent) - incrementDecrement)
+  () => (counterValue.textContent = incrementDecrement -= 1)
 );
