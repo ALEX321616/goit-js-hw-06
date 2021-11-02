@@ -17,8 +17,8 @@ ListImagesGalleryEl.style.display = "grid";
 ListImagesGalleryEl.style.gridTemplateColumns = "1fr 1fr 1fr";
 ListImagesGalleryEl.style.columnGap = "20px";
 ListImagesGalleryEl.style.padding = "0";
+ListImagesGalleryEl.style.margin = "0";
 ListImagesGalleryEl.style.listStyle = "none";
-
 
 const itemImageGallery = images
   .map(
