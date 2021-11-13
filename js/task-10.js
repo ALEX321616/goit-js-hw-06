@@ -8,27 +8,23 @@ const refs = {
   createButtonEl: document.querySelector("button[data-create]"),
   destroyButtonEl: document.querySelector("button[data-destroy]"),
 };
-
-refs.createButtonEl.addEventListener("click", createBoxes);
-
 function createBoxes() {
   refs.divBlockEl.innerHTML = "";
   if (refs.inputEl.value === "") return;
   let arrayDivEL = [];
   let step = 10;
-  for (let i = 0; i < Number(refs.inputEl.value); i += 1) {
-    let colorBrend = getRandomHexColor();
 
+  for (let i = 0; i < Number(refs.inputEl.value); i += 1) {
     const divEl = document.createElement("div");
     divEl.style.width = `${step * i + 30}px`;
     divEl.style.height = `${step * i + 30}px`;
-    divEl.style.backgroundColor = colorBrend;
+    divEl.style.backgroundColor = getRandomHexColor();
     arrayDivEL.push(divEl);
   }
-  console.log(arrayDivEL);
   refs.divBlockEl.append(...arrayDivEL);
 }
 
+refs.createButtonEl.addEventListener("click", createBoxes);
 refs.destroyButtonEl.addEventListener("click", () => {
   refs.divBlockEl.innerHTML = "";
   refs.inputEl.value = "";
